@@ -1,0 +1,436 @@
+/* ==========================================================================
+   Hotel ZP Grand — Luxury Link Page (SoberStuds)
+   ========================================================================== */
+
+:root {
+  /* Cream / Warm Ivory Palette (matching Hotel ZP Grand logo) */
+  --color-page-bg: #F4EFE6;
+  --color-page-bg-gradient: radial-gradient(ellipse at 50% 10%, #FAF7F2 0%, #EDE6D8 100%);
+  --color-card-bg-top: #FFFFFF;
+  --color-card-bg-bottom: #FBF8F2;
+  --color-card-border: rgba(197, 154, 82, 0.28);
+  --color-card-shadow: 0 18px 50px rgba(92, 53, 11, 0.08), 0 4px 14px rgba(92, 53, 11, 0.04);
+  
+  /* Rich Royal Gold / Bronze Ribbon Colors (from logo flourishes & crest) */
+  --color-ribbon-gradient: linear-gradient(135deg, #7E480F 0%, #663806 50%, #4E2902 100%);
+  --color-ribbon-hover: linear-gradient(135deg, #915313 0%, #774208 50%, #5B3002 100%);
+  --color-ribbon-active: linear-gradient(135deg, #5C3204 0%, #4E2802 100%);
+  --color-ribbon-border: rgba(214, 169, 90, 0.42);
+  --color-ribbon-shadow: 0 4px 14px rgba(78, 41, 2, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --color-ribbon-shadow-hover: 0 7px 20px rgba(78, 41, 2, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.26);
+
+  /* Gold & Typography Accents */
+  --color-gold-accent: #C59A52;
+  --color-gold-subtle: rgba(197, 154, 82, 0.15);
+  --color-text-title: #381E05;
+  --color-text-subtitle: #784814;
+  --color-text-white: #FFFFFF;
+
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--color-page-bg-gradient);
+  background-color: var(--color-page-bg);
+  font-family: var(--font-sans);
+  color: var(--color-text-title);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Page Layout Container */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 38px 16px;
+  background: var(--color-page-bg-gradient);
+  background-color: var(--color-page-bg);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Luxury Profile Card (~510px max on Desktop, responsive & centered) */
+.profile-card {
+  width: 100%;
+  max-width: 510px;
+  background: linear-gradient(180deg, var(--color-card-bg-top) 0%, var(--color-card-bg-bottom) 100%);
+  border-radius: 26px;
+  border: 1.5px solid var(--color-card-border);
+  box-shadow: var(--color-card-shadow);
+  padding: 36px 26px 30px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Profile Section: Crest, Hotel Name, General Manager Title, Quick Actions
+   -------------------------------------------------------------------------- */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* Circular Medallion Avatar with Regal Gold Border */
+.profile-avatar-wrapper {
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #F4EFE7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border: 2px solid var(--color-gold-accent);
+  box-shadow: 0 8px 24px rgba(92, 53, 11, 0.12), inset 0 0 12px rgba(197, 154, 82, 0.12);
+  flex-shrink: 0;
+  padding: 6px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-avatar-wrapper:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 28px rgba(92, 53, 11, 0.18), inset 0 0 14px rgba(197, 154, 82, 0.18);
+}
+
+.profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Profile Title — Hotel ZP Grand (Luxury Serif) */
+.profile-title {
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--color-text-title);
+  letter-spacing: 0.8px;
+  margin-bottom: 7px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+/* Designation Subtitle — BISWANATH SUTAR ( General Manager) */
+.profile-subtitle {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text-subtitle);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  line-height: 1.45;
+  margin: 0 auto 10px;
+  max-width: 420px;
+}
+
+/* Elegant Golden Divider */
+.profile-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 160px;
+  margin: 0 auto 14px;
+  opacity: 0.85;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-accent), transparent);
+}
+
+.divider-diamond {
+  color: var(--color-gold-accent);
+  font-size: 9px;
+  line-height: 1;
+}
+
+/* Quick Access Social Action Buttons (Instagram & WhatsApp) */
+.profile-quick-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+
+.quick-action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-gold-subtle);
+  border: 1.5px solid rgba(197, 154, 82, 0.38);
+  color: var(--color-text-subtitle);
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 6px rgba(92, 53, 11, 0.08);
+}
+
+.quick-action-link:hover {
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 5px 15px rgba(92, 53, 11, 0.18);
+}
+
+.quick-action-link.ig-link:hover {
+  background: #E1306C;
+  color: #FFFFFF;
+  border-color: #E1306C;
+}
+
+.quick-action-link.wa-link:hover {
+  background: #25D366;
+  color: #FFFFFF;
+  border-color: #25D366;
+}
+
+.quick-action-link:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* --------------------------------------------------------------------------
+   Links Section: Five Gold/Brown Ribbon Pill Buttons
+   -------------------------------------------------------------------------- */
+.links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 100%;
+  max-width: 440px;
+  margin: 6px auto 0;
+}
+
+.link-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  background: var(--color-ribbon-gradient);
+  border-radius: 9999px;
+  border: 1px solid var(--color-ribbon-border);
+  box-shadow: var(--color-ribbon-shadow);
+  text-decoration: none;
+  padding: 6px 48px;
+  transition: background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+.link-button:hover {
+  background: var(--color-ribbon-hover);
+  transform: translateY(-1.5px);
+  box-shadow: var(--color-ribbon-shadow-hover);
+}
+
+.link-button:active {
+  background: var(--color-ribbon-active);
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(78, 41, 2, 0.2);
+}
+
+/* Circular Icon Badge on the Left */
+.link-icon-container {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(197, 154, 82, 0.25);
+}
+
+.link-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Centered Link Title */
+.link-text {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-text-white);
+  text-align: center;
+  line-height: 1.25;
+  letter-spacing: 0.1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Footer: SoberStuds Branding Badge
+   -------------------------------------------------------------------------- */
+.card-footer {
+  margin-top: 36px;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-brand-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 8px;
+  outline: none;
+  transition: transform 0.2s ease;
+}
+
+.footer-brand-container:focus-visible {
+  outline: 2px solid var(--color-gold-accent);
+  outline-offset: 4px;
+}
+
+.footer-full-logo {
+  width: 135px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(78, 41, 2, 0.15);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0.94;
+}
+
+.footer-brand-container:hover .footer-full-logo,
+.footer-full-logo:hover {
+  transform: translateY(-2px) scale(1.05);
+  opacity: 1;
+  box-shadow: 0 8px 20px rgba(78, 41, 2, 0.25);
+}
+
+.footer-brand-container:active .footer-full-logo {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(78, 41, 2, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 580px) {
+  .page-wrapper {
+    padding: 0;
+  }
+
+  .profile-card {
+    border-radius: 0;
+    min-height: 100vh;
+    padding: 28px 18px 30px;
+    box-shadow: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    max-width: 100%;
+  }
+
+  .profile-title {
+    font-size: 21px;
+  }
+
+  .profile-subtitle {
+    font-size: 13px;
+    padding: 0 4px;
+  }
+
+  .links-section {
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .link-button {
+    min-height: 50px;
+    padding: 6px 42px;
+  }
+
+  .link-icon-container {
+    width: 38px;
+    height: 38px;
+    left: 6px;
+  }
+
+  .link-text {
+    font-size: 14px;
+  }
+
+  .card-footer {
+    margin-top: 32px;
+  }
+
+  .footer-full-logo {
+    width: 125px;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-card {
+    padding: 24px 14px 26px;
+  }
+
+  .profile-avatar-wrapper {
+    width: 106px;
+    height: 106px;
+    margin-bottom: 14px;
+  }
+
+  .profile-title {
+    font-size: 19px;
+  }
+
+  .profile-subtitle {
+    font-size: 12.5px;
+  }
+
+  .link-button {
+    min-height: 48px;
+    padding: 6px 36px;
+  }
+
+  .link-icon-container {
+    width: 34px;
+    height: 34px;
+    left: 6px;
+  }
+
+  .link-text {
+    font-size: 13px;
+  }
+}
